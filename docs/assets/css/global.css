@@ -338,3 +338,10 @@ body .is-layout-flex>* {
 .fab.fa-linkedin {
   color: #325ca8;
 }
+
+.top-banner {
+  background: #00d084;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
