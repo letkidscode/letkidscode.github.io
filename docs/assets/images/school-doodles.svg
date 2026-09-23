@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <g fill="none" stroke="#d3d3d3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- pencil -->
+    <g transform="translate(30 70) rotate(-30)">
+      <rect x="0" y="0" width="70" height="14" rx="2"/>
+      <path d="M70 0 L88 7 L70 14"/>
+      <path d="M82 4.7 L88 7 L82 9.3 Z" fill="#d3d3d3"/>
+      <path d="M12 0 V14 M16 0 V14"/>
+    </g>
+
+    <!-- open book -->
+    <g transform="translate(180 30)">
+      <path d="M50 12 Q28 2 5 8 V52 Q28 46 50 56 Z"/>
+      <path d="M50 12 Q72 2 95 8 V52 Q72 46 50 56 Z"/>
+      <path d="M14 20 Q28 16 42 22 M14 30 Q28 26 42 32 M58 22 Q72 16 86 20 M58 32 Q72 26 86 30"/>
+    </g>
+
+    <!-- star -->
+    <path transform="translate(140 125)" d="M15 0 L18.5 10.1 L29.3 10.4 L20.7 16.9 L23.8 27.1 L15 21 L6.2 27.1 L9.3 16.9 L0.7 10.4 L11.5 10.1 Z"/>
+
+    <!-- apple -->
+    <g transform="translate(232 145)">
+      <path d="M20 12 C8 2 -4 14 2 30 C6 42 14 46 20 42 C26 46 34 42 38 30 C44 14 32 2 20 12 Z"/>
+      <path d="M20 12 Q21 4 24 0"/>
+      <path d="M22 6 Q30 0 34 6 Q27 10 22 6 Z"/>
+    </g>
+
+    <!-- lightbulb -->
+    <g transform="translate(32 205)">
+      <path d="M9 32 C9 25 2 21 2 13 A13 13 0 0 1 28 13 C28 21 21 25 21 32 Z"/>
+      <path d="M10 37 H20 M11 42 H19"/>
+      <path d="M15 -5 V-10 M-3 13 H-8 M33 13 H38 M2 0 L-2 -4 M28 0 L32 -4"/>
+    </g>
+
+    <!-- ruler -->
+    <g transform="translate(110 232) rotate(-8)">
+      <rect x="0" y="0" width="90" height="18" rx="2"/>
+      <path d="M9 0 V6 M18 0 V9 M27 0 V6 M36 0 V9 M45 0 V11 M54 0 V9 M63 0 V6 M72 0 V9 M81 0 V6"/>
+    </g>
+
+    <!-- tiny sparkle -->
+    <path d="M110 95 V107 M104 101 H116"/>
+    <path d="M270 110 V118 M266 114 H274"/>
+  </g>
+
+  <g fill="#d3d3d3" font-family="'Comic Sans MS', 'Chalkboard SE', 'Fredoka', sans-serif" font-weight="700">
+    <text x="28" y="152" font-size="26" transform="rotate(-8 55 145)">ABC</text>
+    <text x="208" y="282" font-size="18" transform="rotate(6 240 276)">1+2=3</text>
+  </g>
+</svg>
