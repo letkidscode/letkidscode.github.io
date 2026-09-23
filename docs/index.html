@@ -103,9 +103,34 @@
 			margin-bottom: 20px;
 		}
 
-		.badge .gear { display: inline-block; animation: spin 4s linear infinite; }
+		/* bubbling beaker */
+		.beaker { position: relative; display: inline-block; color: var(--purple); }
+		.beaker i { display: inline-block; transform-origin: 50% 90%; animation: swirl 2.4s ease-in-out infinite; }
 
-		@keyframes spin { to { transform: rotate(360deg); } }
+		.beaker::before, .beaker::after {
+			content: '';
+			position: absolute;
+			bottom: 60%;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background: var(--purple);
+			opacity: 0;
+			animation: bubble 1.8s ease-out infinite;
+		}
+		.beaker::before { left: 25%; }
+		.beaker::after  { left: 55%; width: 4px; height: 4px; animation-delay: .9s; }
+
+		@keyframes swirl {
+			0%, 100% { transform: rotate(-10deg); }
+			50%      { transform: rotate(10deg); }
+		}
+
+		@keyframes bubble {
+			0%   { transform: translateY(0) scale(.6); opacity: 0; }
+			20%  { opacity: .9; }
+			100% { transform: translateY(-14px) scale(1); opacity: 0; }
+		}
 
 		h1 {
 			font-family: 'Fredoka', sans-serif;
@@ -227,7 +252,7 @@
 		<div class="card">
 			<div class="logo"><img src="./assets/images/lkc_logo_white.png" alt="Let Kids Code"></div>
 			<div>
-				<span class="badge"><span class="gear">&#9881;&#65039;</span> Something new is brewing</span>
+				<span class="badge"><span class="beaker"><i class="fas fa-flask"></i></span> Something new is brewing</span>
 			</div>
 			<h1>
 				<span class="word">We're</span>
