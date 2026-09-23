@@ -85,41 +85,23 @@
 			to   { transform: scale(1) translateY(0); opacity: 1; }
 		}
 
-		/* logo PNG has lots of white padding, so crop to the mark */
-		.logo { width: 110px; height: 110px; margin: -12px auto 18px; overflow: hidden; position: relative; }
-		.logo img { position: absolute; width: 260px; left: -72px; top: -63px; }
-
-		.badge {
-			display: inline-flex;
-			align-items: center;
-			gap: 8px;
-			background: var(--yellow);
-			border: 2px solid var(--ink);
-			border-radius: 999px;
-			padding: 6px 14px;
-			font-family: 'Fredoka', sans-serif;
-			font-weight: 600;
-			font-size: .9rem;
-			margin-bottom: 20px;
-		}
-
 		/* bubbling beaker */
-		.beaker { position: relative; display: inline-block; color: var(--purple); }
+		.beaker { position: relative; display: inline-block; font-size: 3.6rem; line-height: 1; color: var(--purple); margin-bottom: 18px; }
 		.beaker i { display: inline-block; transform-origin: 50% 90%; animation: swirl 2.4s ease-in-out infinite; }
 
 		.beaker::before, .beaker::after {
 			content: '';
 			position: absolute;
 			bottom: 60%;
-			width: 5px;
-			height: 5px;
+			width: .16em;
+			height: .16em;
 			border-radius: 50%;
 			background: var(--purple);
 			opacity: 0;
 			animation: bubble 1.8s ease-out infinite;
 		}
 		.beaker::before { left: 25%; }
-		.beaker::after  { left: 55%; width: 4px; height: 4px; animation-delay: .9s; }
+		.beaker::after  { left: 55%; width: .12em; height: .12em; animation-delay: .9s; }
 
 		@keyframes swirl {
 			0%, 100% { transform: rotate(-10deg); }
@@ -129,7 +111,7 @@
 		@keyframes bubble {
 			0%   { transform: translateY(0) scale(.6); opacity: 0; }
 			20%  { opacity: .9; }
-			100% { transform: translateY(-14px) scale(1); opacity: 0; }
+			100% { transform: translateY(-.7em) scale(1); opacity: 0; }
 		}
 
 		h1 {
@@ -190,8 +172,6 @@
 
 		/* ---------- fine print ---------- */
 		footer {
-			position: relative;
-			z-index: 1;
 			text-align: center;
 			font-size: .8rem;
 			line-height: 1.7;
@@ -201,6 +181,10 @@
 
 		footer a { color: var(--muted); text-decoration: none; }
 		footer a:hover { color: var(--ink); }
+		/* logo PNG has a white box with lots of padding: crop to the mark and multiply the white away */
+		footer .logo { width: 72px; height: 72px; margin: 0 auto 8px; overflow: hidden; position: relative; mix-blend-mode: multiply; }
+		footer .logo img { position: absolute; width: 180px; left: -52px; top: -45px; }
+
 		footer .brand {
 			font-family: 'Fredoka', sans-serif;
 			font-weight: 700;
@@ -214,17 +198,13 @@
 		footer ul { list-style: none; text-align: left; }
 		footer li a { display: inline-flex; align-items: center; padding: 2px 0; }
 		footer i { color: var(--purple); width: 1.1em; margin-right: 6px; text-align: center; }
-		footer .copy { margin-top: 10px; opacity: .8; }
 
 		@media (max-width: 480px) {
 			main { padding: 28px 16px 8px; }
 
 			.card { padding: 28px 18px 28px; border-radius: 22px; box-shadow: 5px 5px 0 var(--ink); }
 
-			.logo { width: 90px; height: 90px; margin: -8px auto 12px; }
-			.logo img { width: 212px; left: -59px; top: -51px; }
-
-			.badge { font-size: .8rem; padding: 5px 12px; margin-bottom: 16px; }
+			.beaker { font-size: 3rem; margin-bottom: 14px; }
 
 			h1 { margin-bottom: 14px; }
 
@@ -250,10 +230,7 @@
 <body>
 	<main>
 		<div class="card">
-			<div class="logo"><img src="./assets/images/lkc_logo_white.png" alt="Let Kids Code"></div>
-			<div>
-				<span class="badge"><span class="beaker"><i class="fas fa-flask"></i></span> Something new is brewing</span>
-			</div>
+			<div class="beaker" aria-hidden="true"><i class="fas fa-flask"></i></div>
 			<h1>
 				<span class="word">We're</span>
 				<span class="word">building</span>
@@ -271,6 +248,7 @@
 	</main>
 
 	<footer>
+		<div class="logo"><img src="./assets/images/lkc_logo_white.png" alt="Let Kids Code"></div>
 		<div class="brand">LKC Academy</div>
 		<div class="cols">
 			<ul>
@@ -284,10 +262,8 @@
 				<li><a href="https://youtube.com/@letkidscode" target="_blank" rel="noopener"><i class="fab fa-youtube"></i>YouTube</a></li>
 			</ul>
 		</div>
-		<div class="copy">&copy; <span id="yr">2026</span> Let Kids Code</div>
 	</footer>
 
-	<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </body>
 
 </html>
